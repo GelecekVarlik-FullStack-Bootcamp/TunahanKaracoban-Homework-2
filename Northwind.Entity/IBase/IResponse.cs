@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Northwind.Entity.IBase
 {
-    interface IResponse
+    public interface IResponse
     {
     }
 
-    interface IResponse<T>
+    public interface IResponse<T>
     {
     }
 }

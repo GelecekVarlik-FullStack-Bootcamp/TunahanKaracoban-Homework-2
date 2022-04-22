@@ -1508,6 +1508,19 @@
         "runtime": {
           "bin/placeholder/Northwind.Entity.dll": {}
         }
+      },
+      "Northwind.Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Northwind.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Northwind.Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Northwind.Interface.dll": {}
+        }
       }
     }
   },
@@ -5741,12 +5754,18 @@
       "type": "project",
       "path": "../Northwind.Entity/Northwind.Entity.csproj",
       "msbuildProject": "../Northwind.Entity/Northwind.Entity.csproj"
+    },
+    "Northwind.Interface/1.0.0": {
+      "type": "project",
+      "path": "../Northwind.Interface/Northwind.Interface.csproj",
+      "msbuildProject": "../Northwind.Interface/Northwind.Interface.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "AutoMapper >= 11.0.1",
-      "Northwind.Entity >= 1.0.0"
+      "Northwind.Entity >= 1.0.0",
+      "Northwind.Interface >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5778,6 +5797,9 @@
           "projectReferences": {
             "C:\\Users\\krctu\\source\\repos\\Northwind\\Northwind.Entity\\Northwind.Entity.csproj": {
               "projectPath": "C:\\Users\\krctu\\source\\repos\\Northwind\\Northwind.Entity\\Northwind.Entity.csproj"
+            },
+            "C:\\Users\\krctu\\source\\repos\\Northwind\\Northwind.Interface\\Northwind.Interface.csproj": {
+              "projectPath": "C:\\Users\\krctu\\source\\repos\\Northwind\\Northwind.Interface\\Northwind.Interface.csproj"
             }
           }
         }
@@ -5812,7 +5834,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
       }
     }
   }

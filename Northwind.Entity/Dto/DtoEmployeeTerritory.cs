@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Entity.Dto
 {
-    class DtoEmployeeTerritory: DtoBase
+    public class DtoEmployeeTerritory : DtoBase
     {
         public int EmployeeId { get; set; }
         public string TerritoryId { get; set; }

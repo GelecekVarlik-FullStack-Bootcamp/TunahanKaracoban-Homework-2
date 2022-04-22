@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Northwind.Entity.Dto
 {
-    class DtoCategory:DtoBase
+    public class DtoCategory : DtoBase
     {
         public DtoCategory()
         {
-            
+
         }
 
         public int CategoryId { get; set; }
