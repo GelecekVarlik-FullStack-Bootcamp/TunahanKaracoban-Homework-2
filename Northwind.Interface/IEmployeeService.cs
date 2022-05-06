@@ -10,6 +10,6 @@ namespace Northwind.Interface
 {
     public interface IEmployeeService:IGenericService<Employee, DtoEmployee>
     {
-        IQueryable<DtoEmployee> GetTotalReport();
+        
     }
 }

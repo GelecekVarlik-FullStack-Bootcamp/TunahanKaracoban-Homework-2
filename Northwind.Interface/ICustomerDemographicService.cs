@@ -10,6 +10,6 @@ namespace Northwind.Interface
 {
     public interface ICustomerDemographicService:IGenericService<CustomerDemographic, DtoCustomerDemographic>
     {
-        IQueryable<DtoCustomerDemographic> GetTotalReport();
+       
     }
 }

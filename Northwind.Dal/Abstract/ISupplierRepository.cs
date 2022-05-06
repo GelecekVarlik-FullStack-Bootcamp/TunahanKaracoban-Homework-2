@@ -9,6 +9,6 @@ namespace Northwind.Dal.Abstract
 {
     public interface ISupplierRepository
     {
-        IQueryable<Supplier> GetTotalReport();
+       
     }
 }

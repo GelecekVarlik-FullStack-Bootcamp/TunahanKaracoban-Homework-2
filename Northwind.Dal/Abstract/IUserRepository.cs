@@ -9,6 +9,6 @@ namespace Northwind.Dal.Abstract
 {
     public interface IUserRepository
     {
-        IQueryable<User> GetTotalReport();
+        User Login(User login);
     }
 }

@@ -10,6 +10,6 @@ namespace Northwind.Interface
 {
     public interface IShipperService:IGenericService<Shipper, DtoShipper>
     {
-        IQueryable<DtoShipper> GetTotalReport();
+       
     }
 }

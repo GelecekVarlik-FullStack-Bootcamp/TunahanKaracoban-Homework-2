@@ -1,4 +1,5 @@
-﻿using Northwind.Entity.Dto;
+﻿using Northwind.Dal.Abstract;
+using Northwind.Entity.Dto;
 using Northwind.Entity.Models;
 using Northwind.Interface;
 using System;
@@ -11,9 +12,10 @@ namespace Northwind.Bll
 {
     public class CustomerDemographicManager : GenericManager<CustomerDemographic, DtoCustomerDemographic>, ICustomerDemographicService
     {
-        public IQueryable<DtoCustomerDemographic> GetTotalReport()
+        public readonly ICustomerDemographicRepository customerDemographicRepository;
+        public CustomerDemographicManager(IServiceProvider service) : base(service)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

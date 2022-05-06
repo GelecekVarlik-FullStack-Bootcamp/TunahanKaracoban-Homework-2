@@ -1,4 +1,5 @@
-﻿using Northwind.Entity.Dto;
+﻿using Northwind.Dal.Abstract;
+using Northwind.Entity.Dto;
 using Northwind.Entity.Models;
 using Northwind.Interface;
 using System;
@@ -11,9 +12,10 @@ namespace Northwind.Bll
 {
     public class ShipperManager : GenericManager<Shipper, DtoShipper>, IShipperService
     {
-        public IQueryable<DtoShipper> GetTotalReport()
+        public readonly IShipperRepository shipperRepository;
+        public ShipperManager(IServiceProvider service) : base(service)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

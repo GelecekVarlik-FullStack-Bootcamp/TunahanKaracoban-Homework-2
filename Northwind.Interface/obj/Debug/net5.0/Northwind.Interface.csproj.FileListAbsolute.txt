@@ -10,3 +10,6 @@ C:\Users\krctu\source\repos\Northwind\Northwind.Interface\obj\Debug\net5.0\North
 C:\Users\krctu\source\repos\Northwind\Northwind.Interface\obj\Debug\net5.0\Northwind.Interface.dll
 C:\Users\krctu\source\repos\Northwind\Northwind.Interface\obj\Debug\net5.0\ref\Northwind.Interface.dll
 C:\Users\krctu\source\repos\Northwind\Northwind.Interface\obj\Debug\net5.0\Northwind.Interface.pdb
+C:\Users\krctu\source\repos\Northwind\Northwind.Interface\bin\Debug\net5.0\Northwind.Entity.dll
+C:\Users\krctu\source\repos\Northwind\Northwind.Interface\bin\Debug\net5.0\Northwind.Entity.pdb
+C:\Users\krctu\source\repos\Northwind\Northwind.Interface\obj\Debug\net5.0\Northwind.Interface.csproj.CopyComplete

@@ -1,14 +1,24 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Northwind.Bll;
+using Northwind.Dal.Abstract;
+using Northwind.Dal.Concrete.Entityframework.Context;
+using Northwind.Dal.Concrete.Entityframework.Reporsitory;
+using Northwind.Dal.Concrete.Entityframework.UnitOfWork;
+using Northwind.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Northwind.WebApi
@@ -25,6 +35,44 @@ namespace Northwind.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region JwtTokenService
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(cfg =>
+                {
+                    cfg.SaveToken = true;
+                    cfg.RequireHttpsMetadata = false;
+                    cfg.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer=true,
+                        ValidateAudience=true,
+                        ValidIssuer=Configuration["Tokens:Issuer"],
+                        ValidAudience=Configuration["Tokens:Issuer"],
+                        IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Tokens:Key"])),
+                        RequireSignedTokens=true,
+                        RequireExpirationTime=true,
+
+                    };
+                });
+            #endregion
+
+            #region ApplicationContext
+            services.AddDbContext<NorthwindContext>();
+            services.AddScoped<DbContext, NorthwindContext>();
+            #endregion
+
+            #region ServiceSection
+            services.AddScoped<ICustomerService, CustomerManager>();
+            services.AddScoped<IUserService, UserManager>();
+            #endregion
+
+            #region RepositorySection
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            #endregion
+
+            #region UnitOfWork
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            #endregion
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

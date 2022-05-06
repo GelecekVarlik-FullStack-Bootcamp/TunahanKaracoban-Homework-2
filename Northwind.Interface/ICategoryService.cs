@@ -10,6 +10,6 @@ namespace Northwind.Interface
 {
     public interface ICategoryService:IGenericService<Category,DtoCategory>
     {
-        IQueryable<DtoCategory> GetTotalReport();
+       
     }
 }

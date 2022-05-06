@@ -1,4 +1,5 @@
-﻿using Northwind.Entity.Dto;
+﻿using Northwind.Dal.Abstract;
+using Northwind.Entity.Dto;
 using Northwind.Entity.Models;
 using Northwind.Interface;
 using System;
@@ -11,9 +12,10 @@ namespace Northwind.Bll
 {
     public class RegionManager : GenericManager<Region, DtoRegion>, IRegionService
     {
-        public IQueryable<DtoRegion> GetTotalReport()
+        public readonly IRegionRepository regionRepository;
+        public RegionManager(IServiceProvider service) : base(service)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

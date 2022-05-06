@@ -15,9 +15,6 @@ namespace Northwind.Dal.Concrete.Entityframework.Reporsitory
         {
 
         }
-        public IQueryable<Shipper> GetTotalReport()
-        {
-            return dbset.AsQueryable();
-        }
+       
     }
 }

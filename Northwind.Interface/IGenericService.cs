@@ -35,6 +35,7 @@ namespace Northwind.Interface
         Task<IResponse<bool>> DeleteByIdAsync(int id, bool saveChanges = true);
 
         //IQueryable Listele
-        IQueryable<TDto> GetQueryable();
+        IResponse<IQueryable<TDto>> GetQueryable();
+        void Save();
     }
 }

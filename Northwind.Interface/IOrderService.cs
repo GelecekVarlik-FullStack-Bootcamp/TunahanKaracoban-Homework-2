@@ -10,6 +10,6 @@ namespace Northwind.Interface
 {
     public interface IOrderService:IGenericService<Order, DtoOrder>
     {
-        IQueryable<DtoOrder> GetTotalReport();
+        
     }
 }

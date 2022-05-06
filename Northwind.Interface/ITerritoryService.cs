@@ -10,6 +10,6 @@ namespace Northwind.Interface
 {
     public interface ITerritoryService:IGenericService<Territory, DtoTerritory>
     {
-        IQueryable<DtoTerritory> GetTotalReport();
+        
     }
 }

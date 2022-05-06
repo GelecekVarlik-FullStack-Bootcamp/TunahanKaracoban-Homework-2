@@ -15,9 +15,15 @@ namespace Northwind.Dal.Concrete.Entityframework.Reporsitory
         {
 
         }
-        public IQueryable<User> GetTotalReport()
+
+        public User Login(User login)
         {
-            return dbset.AsQueryable();
+             var user = dbset.Where(x => x.UserCode == login.UserCode && x.Password == login.Password).SingleOrDefault();
+
+            //var user = dbset.FirstOrDefault(x => x.UserCode == login.UserCode && x.Password == login.Password);
+
+           // var user = dbset.SingleOrDefault(x => x.UserCode == login.UserCode && x.Password == login.Password);
+            return user;
         }
     }
 }

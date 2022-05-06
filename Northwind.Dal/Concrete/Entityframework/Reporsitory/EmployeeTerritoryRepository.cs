@@ -15,9 +15,6 @@ namespace Northwind.Dal.Concrete.Entityframework.Reporsitory
         {
 
         }
-        public IQueryable<EmployeeTerritory> GetTotalReport()
-        {
-            return dbset.AsQueryable();
-        }
+       
     }
 }

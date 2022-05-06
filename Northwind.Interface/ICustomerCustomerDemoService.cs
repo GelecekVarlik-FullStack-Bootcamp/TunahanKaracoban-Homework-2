@@ -10,6 +10,6 @@ namespace Northwind.Interface
 {
     public interface ICustomerCustomerDemoService : IGenericService<CustomerCustomerDemo, DtoCustomerCustomerDemo>
     {
-        IQueryable<DtoCustomerCustomerDemo> GetTotalReport();
+        
     }
 }

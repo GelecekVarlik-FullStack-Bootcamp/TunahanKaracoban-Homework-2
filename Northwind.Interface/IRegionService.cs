@@ -10,6 +10,6 @@ namespace Northwind.Interface
 {
     public interface IRegionService:IGenericService<Region, DtoRegion>
     {
-        IQueryable<DtoRegion> GetTotalReport();
+        
     }
 }

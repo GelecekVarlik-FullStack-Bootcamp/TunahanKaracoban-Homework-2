@@ -9,6 +9,6 @@ namespace Northwind.Dal.Abstract
 {
     public interface ICustomerCustomerDemoRepository
     {
-        IQueryable<CustomerCustomerDemo> GetTotalReport();
+       
     }
 }
